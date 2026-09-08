@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>webeater | Gaming Links</title>
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+        }
+
+
+        html,
+        body {
+            min-height: 100%;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+
+            min-height: 100vh;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            overflow-x: hidden;
+
+            position: relative;
+
+            background-color: #09050d;
+
+            background-image:
+                url("images/background.png");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+        }
+
+
+        /* DARK OVERLAY */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(
+                    5,
+                    3,
+                    10,
+                    0.55
+                );
+
+            z-index: -1;
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+
+            width: 100%;
+
+            max-width: 550px;
+
+            padding:
+                40px
+                20px
+                50px;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        .profile {
+
+            margin-bottom: 30px;
+        }
+
+
+        /* AVATAR */
+
+        .avatar-wrapper {
+
+            width: 110px;
+
+            height: 110px;
+
+            margin:
+                0
+                auto
+                16px;
+
+            cursor: pointer;
+
+            position: relative;
+        }
+
+
+        .avatar {
+
+            width: 110px;
+
+            height: 110px;
+
+            border-radius: 50%;
+
+            border:
+                3px solid
+                #a855f7;
+
+            background-image:
+                url("images/avatar.png");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            box-shadow:
+                0 0 15px
+                #a855f7,
+
+                0 0 35px
+                rgba(
+                    168,
+                    85,
+                    247,
+                    0.5
+                );
+
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+        }
+
+
+        .avatar-wrapper:hover .avatar {
+
+            transform:
+                scale(1.06);
+
+            box-shadow:
+
+                0 0 20px
+                #a855f7,
+
+                0 0 45px
+                rgba(
+                    168,
+                    85,
+                    247,
+                    0.8
+                );
+        }
+
+
+        /* PROFILE NAME */
+
+        h1 {
+
+            font-size: 32px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 8px;
+
+            text-shadow:
+
+                0 0 15px
+                #a855f7;
+        }
+
+
+        .tagline {
+
+            color:
+                #d8b4fe;
+
+            font-size: 14px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           LINKS
+        ========================= */
+
+        .links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 16px;
+        }
+
+
+        /* =========================
+           LINK CARD
+        ========================= */
+
+        .link {
+
+            position: relative;
+
+            min-height: 85px;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                var(--accent);
+
+            background:
+                #100914;
+
+            box-shadow:
+
+                0 0 14px
+                var(--glow);
+
+            transition:
+
+                transform 0.3s,
+
+                box-shadow 0.3s,
+
+                border-color 0.3s;
+        }
+
+
+        /* =========================
+           BUTTON BACKGROUND IMAGE
+        ========================= */
+
+        .link::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background-image:
+                var(--link-bg);
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            opacity: 0.82;
+
+            transition:
+                transform 0.35s,
+                opacity 0.35s;
+
+            z-index: 0;
+        }
+
+
+        /* DARK IMAGE OVERLAY */
+
+        .link::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+
+                    rgba(
+                        5,
+                        2,
+                        10,
+                        0.90
+                    ),
+
+                    rgba(
+                        5,
+                        2,
+                        10,
+                        0.38
+                    ),
+
+                    rgba(
+                        5,
+                        2,
+                        10,
+                        0.90
+                    )
+                );
+
+            z-index: 1;
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           INSTAGRAM
+        ========================= */
+
+        .instagram {
+
+            --accent:
+                #ff4f9a;
+
+            --glow:
+                rgba(
+                    255,
+                    79,
+                    154,
+                    0.45
+                );
+
+            --link-bg:
+                url(
+                    "images/instagram.png"
+                );
+        }
+
+
+        /* =========================
+           DISCORD
+        ========================= */
+
+        .discord {
+
+            --accent:
+                #5865f2;
+
+            --glow:
+                rgba(
+                    88,
+                    101,
+                    242,
+                    0.45
+                );
+
+            --link-bg:
+                url(
+                    "images/discord.png"
+                );
+        }
+
+
+        /* =========================
+           TIKTOK
+        ========================= */
+
+        .tiktok {
+
+            --accent:
+                #25f4ee;
+
+            --glow:
+                rgba(
+                    37,
+                    244,
+                    238,
+                    0.38
+                );
+
+            --link-bg:
+                url(
+                    "images/tiktok.png"
+                );
+        }
+
+
+        /* =========================
+           SNAPCHAT
+        ========================= */
+
+        .snapchat {
+
+            --accent:
+                #ffe600;
+
+            --glow:
+                rgba(
+                    255,
+                    230,
+                    0,
+                    0.32
+                );
+
+            --link-bg:
+                url(
+                    "images/snapchat.png"
+                );
+        }
+
+
+        /* =========================
+           STEAM
+        ========================= */
+
+        .steam {
+
+            --accent:
+                #66c0f4;
+
+            --glow:
+                rgba(
+                    102,
+                    192,
+                    244,
+                    0.42
+                );
+
+            --link-bg:
+                url(
+                    "images/steam.png"
+                );
+        }
+
+
+        /* =========================
+           CLICKABLE LINK
+        ========================= */
+
+        .link-main {
+
+            position: relative;
+
+            z-index: 3;
+
+            width: 100%;
+
+            min-height: 85px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding:
+                15px
+                95px
+                15px
+                25px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            text-shadow:
+
+                0 2px 5px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.9
+                );
+        }
+
+
+        /* =========================
+           HOVER EFFECT
+        ========================= */
+
+        .link:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                var(--accent);
+
+            box-shadow:
+
+                0 0 20px
+                var(--accent),
+
+                0 0 40px
+                var(--glow);
+        }
+
+
+        .link:hover::before {
+
+            transform:
+                scale(1.06);
+
+            opacity: 1;
+        }
+
+
+        /* =========================
+           ARROW
+        ========================= */
+
+        .change-bg {
+
+            position: absolute;
+
+            right: 13px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            z-index: 5;
+
+            width: 70px;
+
+            height: 42px;
+
+            border-radius: 10px;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.35
+                );
+
+            background:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.55
+                );
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 19px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition:
+                0.3s;
+        }
+
+
+        .change-bg:hover {
+
+            background:
+                var(--accent);
+
+            border-color:
+                white;
+
+            box-shadow:
+
+                0 0 12px
+                var(--accent),
+
+                0 0 25px
+                var(--glow);
+
+            transform:
+                translate(
+                    5px,
+                    -50%
+                );
+        }
+
+
+        /* =========================
+           HIDDEN FILE INPUT
+        ========================= */
+
+        .hidden-file {
+
+            display: none;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            margin-top: 32px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.55
+                );
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (
+            max-width: 500px
+        ) {
+
+            .container {
+
+                padding:
+                    30px
+                    15px
+                    40px;
+            }
+
+
+            h1 {
+
+                font-size: 27px;
+            }
+
+
+            .avatar-wrapper,
+            .avatar {
+
+                width: 95px;
+
+                height: 95px;
+            }
+
+
+            .link,
+            .link-main {
+
+                min-height: 78px;
+            }
+
+
+            .link-main {
+
+                font-size: 15px;
+
+                padding-right: 85px;
+            }
+
+
+            .change-bg {
+
+                width: 62px;
+
+                height: 38px;
+
+                font-size: 16px;
+
+                right: 9px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- =========================
+         PROFILE
+    ========================= -->
+
+    <div class="profile">
+
+
+        <!-- CLICK AVATAR TO CHANGE -->
+
+        <div
+            class="avatar-wrapper"
+            id="avatarWrapper"
+            title="Change avatar"
+        >
+
+            <div
+                class="avatar"
+                id="avatar"
+            ></div>
+
+        </div>
+
+
+        <input
+            type="file"
+            id="avatarUpload"
+            class="hidden-file"
+            accept="image/*"
+        >
+
+
+        <h1>
+            webeater
+        </h1>
+
+
+        <p class="tagline">
+            GAMER • CREATE • CONNECT
+        </p>
+
+
+    </div>
+
+
+    <!-- =========================
+         SOCIAL LINKS
+    ========================= -->
+
+    <div class="links">
+
+
+        <!-- INSTAGRAM -->
+
+        <div
+            class="link instagram"
+            id="instagramLink"
+        >
+
+            <a
+                href="https://instagram.com/webeater_"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-main"
+            >
+                Instagram
+            </a>
+
+
+            <button
+                class="change-bg"
+                data-target="instagram"
+                type="button"
+                aria-label="Change Instagram background"
+            >
+                --->
+            </button>
+
+
+            <input
+                type="file"
+                id="instagramUpload"
+                class="hidden-file"
+                accept="image/*"
+            >
+
+        </div>
+
+
+        <!-- DISCORD -->
+
+        <div
+            class="link discord"
+            id="discordLink"
+        >
+
+            <a
+                href="https://www.discordapp.com/users/777990236591751208"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-main"
+            >
+                Discord
+            </a>
+
+
+            <button
+                class="change-bg"
+                data-target="discord"
+                type="button"
+                aria-label="Change Discord background"
+            >
+                --->
+            </button>
+
+
+            <input
+                type="file"
+                id="discordUpload"
+                class="hidden-file"
+                accept="image/*"
+            >
+
+        </div>
+
+
+        <!-- TIKTOK -->
+
+        <div
+            class="link tiktok"
+            id="tiktokLink"
+        >
+
+            <a
+                href="https://www.tiktok.com/@webii.7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-main"
+            >
+                TikTok
+            </a>
+
+
+            <button
+                class="change-bg"
+                data-target="tiktok"
+                type="button"
+                aria-label="Change TikTok background"
+            >
+                --->
+            </button>
+
+
+            <input
+                type="file"
+                id="tiktokUpload"
+                class="hidden-file"
+                accept="image/*"
+            >
+
+        </div>
+
+
+        <!-- SNAPCHAT -->
+
+        <div
+            class="link snapchat"
+            id="snapchatLink"
+        >
+
+            <a
+                href="https://www.snapchat.com/add/webeater7?share_id=wUFkqXxbNPY&locale=en-US"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-main"
+            >
+                Snapchat
+            </a>
+
+
+            <button
+                class="change-bg"
+                data-target="snapchat"
+                type="button"
+                aria-label="Change Snapchat background"
+            >
+                --->
+            </button>
+
+
+            <input
+                type="file"
+                id="snapchatUpload"
+                class="hidden-file"
+                accept="image/*"
+            >
+
+        </div>
+
+
+        <!-- STEAM -->
+
+        <div
+            class="link steam"
+            id="steamLink"
+        >
+
+            <a
+                href="https://steamcommunity.com/profiles/76561199805959128/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-main"
+            >
+                Steam
+            </a>
+
+
+            <button
+                class="change-bg"
+                data-target="steam"
+                type="button"
+                aria-label="Change Steam background"
+            >
+                --->
+            </button>
+
+
+            <input
+                type="file"
+                id="steamUpload"
+                class="hidden-file"
+                accept="image/*"
+            >
+
+        </div>
+
+
+    </div>
+
+
+    <footer>
+        © 2026 webeater
+    </footer>
+
+
+</div>
+
+
+<script>
+
+
+/* =========================
+   AVATAR
+========================= */
+
+const avatarWrapper =
+    document.getElementById(
+        "avatarWrapper"
+    );
+
+const avatarUpload =
+    document.getElementById(
+        "avatarUpload"
+    );
+
+const avatar =
+    document.getElementById(
+        "avatar"
+    );
+
+
+avatarWrapper.addEventListener(
+    "click",
+    function () {
+
+        avatarUpload.click();
+
+    }
+);
+
+
+avatarUpload.addEventListener(
+    "change",
+    function () {
+
+        const file =
+            this.files[0];
+
+        if (!file) return;
+
+
+        if (
+            !file.type.startsWith(
+                "image/"
+            )
+        ) {
+
+            alert(
+                "Please choose an image."
+            );
+
+            return;
+        }
+
+
+        const reader =
+            new FileReader();
+
+
+        reader.onload =
+            function (event) {
+
+                const image =
+                    event.target.result;
+
+
+                avatar.style.backgroundImage =
+                    `url("${image}")`;
+
+
+                localStorage.setItem(
+                    "webeaterAvatar",
+                    image
+                );
+
+            };
+
+
+        reader.readAsDataURL(file);
+
+    }
+);
+
+
+
+/* =========================
+   PAGE BACKGROUND
+========================= */
+
+const pageBackgroundInput =
+    document.createElement(
+        "input"
+    );
+
+
+pageBackgroundInput.type =
+    "file";
+
+
+pageBackgroundInput.accept =
+    "image/*";
+
+
+pageBackgroundInput.className =
+    "hidden-file";
+
+
+document.body.appendChild(
+    pageBackgroundInput
+);
+
+
+
+/*
+   Click empty page area
+   to change background
+*/
+
+document.body.addEventListener(
+    "click",
+    function (event) {
+
+        if (
+            event.target ===
+                document.body
+            ||
+            event.target ===
+                document.documentElement
+        ) {
+
+            pageBackgroundInput.click();
+
+        }
+
+    }
+);
+
+
+
+pageBackgroundInput.addEventListener(
+    "change",
+    function () {
+
+        const file =
+            this.files[0];
+
+        if (!file) return;
+
+
+        if (
+            !file.type.startsWith(
+                "image/"
+            )
+        ) {
+
+            alert(
+                "Please choose an image."
+            );
+
+            return;
+        }
+
+
+        const reader =
+            new FileReader();
+
+
+        reader.onload =
+            function (event) {
+
+                const image =
+                    event.target.result;
+
+
+                document.body.style.backgroundImage =
+                    `linear-gradient(
+                        rgba(5,3,10,.55),
+                        rgba(5,3,10,.55)
+                    ),
+                    url("${image}")`;
+
+
+                localStorage.setItem(
+                    "webeaterBackground",
+                    image
+                );
+
+            };
+
+
+        reader.readAsDataURL(file);
+
+    }
+);
+
+
+
+/* =========================
+   SOCIAL BACKGROUNDS
+========================= */
+
+const socialNames = [
+
+    "instagram",
+
+    "discord",
+
+    "tiktok",
+
+    "snapchat",
+
+    "steam"
+
+];
+
+
+
+socialNames.forEach(
+    function (name) {
+
+
+        const button =
+            document.querySelector(
+                `[data-target="${name}"]`
+            );
+
+
+        const input =
+            document.getElementById(
+                `${name}Upload`
+            );
+
+
+        const card =
+            document.getElementById(
+                `${name}Link`
+            );
+
+
+
+        /*
+           CLICK ARROW
+        */
+
+        button.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+                input.click();
+
+            }
+        );
+
+
+
+        /*
+           SELECT NEW IMAGE
+        */
+
+        input.addEventListener(
+            "change",
+            function () {
+
+                const file =
+                    this.files[0];
+
+                if (!file) return;
+
+
+                if (
+                    !file.type.startsWith(
+                        "image/"
+                    )
+                ) {
+
+                    alert(
+                        "Please choose an image."
+                    );
+
+                    return;
+                }
+
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function (event) {
+
+                        const image =
+                            event.target.result;
+
+
+                        card.style.setProperty(
+                            "--link-bg",
+                            `url("${image}")`
+                        );
+
+
+                        localStorage.setItem(
+                            `webeater_${name}_background`,
+                            image
+                        );
+
+                    };
+
+
+                reader.readAsDataURL(file);
+
+            }
+        );
+
+
+    }
+);
+
+
+
+/* =========================
+   LOAD SAVED AVATAR
+========================= */
+
+const savedAvatar =
+    localStorage.getItem(
+        "webeaterAvatar"
+    );
+
+
+if (savedAvatar) {
+
+    avatar.style.backgroundImage =
+        `url("${savedAvatar}")`;
+
+}
+
+
+
+/* =========================
+   LOAD SAVED PAGE BACKGROUND
+========================= */
+
+const savedBackground =
+    localStorage.getItem(
+        "webeaterBackground"
+    );
+
+
+if (savedBackground) {
+
+    document.body.style.backgroundImage =
+
+        `linear-gradient(
+            rgba(5,3,10,.55),
+            rgba(5,3,10,.55)
+        ),
+        url("${savedBackground}")`;
+
+}
+
+
+
+/* =========================
+   LOAD SAVED SOCIAL IMAGES
+========================= */
+
+socialNames.forEach(
+    function (name) {
+
+
+        const savedImage =
+            localStorage.getItem(
+                `webeater_${name}_background`
+            );
+
+
+        if (savedImage) {
+
+
+            const card =
+                document.getElementById(
+                    `${name}Link`
+                );
+
+
+            card.style.setProperty(
+                "--link-bg",
+                `url("${savedImage}")`
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
